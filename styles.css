@@ -39,3 +39,23 @@ h1 {
   color: #007BFF;
   font-weight: bold;
 }
+
+.thepent {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #888;
+}
+  @font-face {
+    font-family: 'Moontime';
+    src: url('fonts/MoonTime.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+.logo-moontime {
+  font-family: 'Moontime', cursive;
+  font-size: 2.1rem;
+  letter-spacing: 1px;
+  display: inline-block;
+}
