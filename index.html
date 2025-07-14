@@ -2,318 +2,63 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Noticias en Vivo</title>
-  <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <title>Canales en Vivo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 1rem; background: #f8f9fa; }
+    .canal { margin-bottom: 2rem; background: #fff; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 6px #0001; }
+    .canal h2 { margin-top: 0; font-size: 1.3rem; }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+  </style>
 </head>
 <body>
-  <img src="banner.png" alt="Banner" style="width:100%;display:block;margin-bottom:1rem;">
 
-  <h1>Canales de Noticias en Vivo</h1>
-  <div class="grid">
+  <h1>Transmisiones en Vivo</h1>
+  <div id="contenedor-canales"></div>
 
-    <div class="canal">
-      <h2>La Nación+</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-        src="https://www.youtube.com/embed/OR9MH16MKrg?autoplay=1&mute=1" 
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-        style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
+  <script>
+    const API_URL = "https://script.google.com/macros/s/AKfycbzD7nIJe5FpS_CxuqaO3LKahezaSvQ7gguHIfkIJ1nYCzIo5BdsM77G2V2DLHBmlx3lLQ/exec?action=getVivos";
 
-    <div class="canal">
-      <h2>C5N</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/live_stream?channel=UCFgk2Q2mVO1BklRQhSv6p0w&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => {
+        const contenedor = document.getElementById("contenedor-canales");
 
-      <div class="canal">
-        <h2>TN</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe 
-            src="https://www.youtube.com/embed/live_stream?channel=UCj6PcyLvpnIRT_2W_mwa9Aw&autoplay=1&mute=1"       
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-          </iframe>
-        </div>
-      </div>
+        data.forEach(canal => {
+          if (!canal.videoId) return; // ignorar si no hay vivo
 
-      <div class="canal">
-        <h2>Crónica</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe 
-            src="https://www.youtube.com/embed/live_stream?channel=UCT7KFGv6s2a-rh2Jq8ZdM1g&autoplay=1&mute=1"       
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-          </iframe>
-        </div>
-      </div>
-      
-      <div class="canal">
-        <h2>Infobae</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe 
-            src="https://www.youtube.com/embed/mFCxsv7SoxI?autoplay=1&mute=1"       
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-          </iframe>
-        </div>
-      </div>
-    </div>
-
-  <h1>Canales de Radio en Vivo</h1>
-  <div class="grid">
-    <div class="canal">
-      <h2>Radio 10</h2>
-      <div id="player-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe id="radio10-player" 
-          src="https://www.youtube.com/embed/live_stream?channel=UCJozD5RVug7EZdTjqkGISYQ&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media" 
-          allowfullscreen 
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="canal">
-      <h2>Radio Mitre</h2>
-      <div id="player-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe id="radio10-player" 
-          src="https://www.youtube.com/embed/live_stream?channel=UCYvINPByAdCcpA0sWrF3I_w&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media" 
-          allowfullscreen 
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="canal">
-      <h2>Radio Urbana Play</h2>
-      <div id="player-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe id="radio10-player" 
-          src="https://www.youtube.com/embed/live_stream?channel=UCC1kfsMJko54AqxtcFECt-A&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media" 
-          allowfullscreen 
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="canal">
-      <h2>Radio Con Vos</h2>
-      <div id="player-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe id="radio10-player" 
-          src="https://www.youtube.com/embed/live_stream?channel=UCxDteokWBemJvLI_I0VUGdA&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media" 
-          allowfullscreen 
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="canal">
-      <h2>Radio Pop</h2>
-      <div id="player-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe id="radio10-player" 
-          src="https://www.youtube.com/embed/live_stream?channel=UCtc_WjDRwCrZSEq2WEwD7XQ&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media" 
-          allowfullscreen 
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="canal">
-      <h2>Radio La Red</h2>
-      <div id="player-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe id="radio10-player" 
-          src="https://www.youtube.com/embed/live_stream?channel=UCs1U5lRXvUJHn0CgXI6oXAw&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media" 
-          allowfullscreen 
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="canal">
-      <h2>Radio Somos</h2>
-      <div id="player-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe id="radio10-player" 
-          src="https://www.youtube.com/embed/live_stream?channel=UCN3gx_z62nxCeFIkaK2HbrA&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media" 
-          allowfullscreen 
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="canal">
-      <h2>Carburando</h2>
-      <div id="player-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe id="radio10-player" 
-          src="https://www.youtube.com/embed/live_stream?channel=UCVHQZIlc766KbxpKQK1on6Q&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media" 
-          allowfullscreen 
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="canal">
-      <h2>Radio Vale</h2>
-      <div id="player-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe id="radio10-player" 
-          src="https://www.youtube.com/embed/live_stream?channel=UC1Oa7gHuqzGHB90FPb0ssPA&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media" 
-          allowfullscreen 
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-  </div>
-
-    <h1>Canales de Streaming en Vivo</h1>
-    <div class="grid">
-      <div class="canal">
-        <h2>LuzuTV</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe 
-            src="https://www.youtube.com/embed/live_stream?channel=UCTHaNTsP7hsVgBxARZTuajw&autoplay=1&mute=1"       
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-          </iframe>
-        </div>
-      </div>
-  
-      <div class="canal">
-        <h2>Olga</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe 
-            src="https://www.youtube.com/embed/live_stream?channel=UC7mJ2EDXFomeDIRFu5FtEbA&autoplay=1&mute=1"       
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-          </iframe>
-        </div>
-      </div>
-      
-    <div class="canal">
-      <h2>Gelatina</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/live_stream?channel=UCWSfXECGo1qK_H7SXRaUSMg&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>  
-      </div>  
-    </div>  
-
-    <div class="canal">
-      <h2>Neura</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/live_stream?channel=UC-40U87JsevMIMn7PMw4jPw&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>  
-      </div>  
-    </div>  
-
-    <div class="canal">
-      <h2>Carajo</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/live_stream?channel=UC4mdhKZXjrKoq5aVG6juHEg&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="canal">
-      <h2>Futurock</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/live_stream?channel=UCgn6r0aGRBnEQm02tE_jzbw&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="canal">
-      <h2>Blender</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/live_stream?channel=UC6pJGaMdx5Ter_8zYbLoRgA&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="canal">
-      <h2>Solos La Casa</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/live_stream?channel=UC4u0BhsSi33PS20_1JHiC5A&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="canal">
-      <h2>Border</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/live_stream?channel=UC_J368jRtGUPIjl0NZzW0Sg&autoplay=1&mute=1"       
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-
-
-  </div>
+          const div = document.createElement("div");
+          div.className = "canal";
+          div.innerHTML = `
+            <h2>${canal.nombre || canal.canalId}</h2>
+            <div class="video-container">
+              <iframe 
+                src="https://www.youtube.com/embed/${canal.videoId}?autoplay=1&mute=1"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+              </iframe>
+            </div>
+          `;
+          contenedor.appendChild(div);
+        });
+      })
+      .catch(err => {
+        document.getElementById("contenedor-canales").innerHTML =
+          "<p style='color:red;'>Error al cargar transmisiones.</p>";
+        console.error("Error:", err);
+      });
+  </script>
 </body>
-
-<footer style="background:#f1f1f1;color:#333;text-align:center;padding:1rem 0 1.2rem 0;font-size:1rem;">
-<a href="https://thepent.com.ar" target="_blank" rel="noopener">
-    <span class="thq-body-small">Powered by:</span>  
-    <span style="display: inline-block; margin-left: 12px;">
-      <!-- Encabezado MenuLab -->
-      <div class="header-container">
-        <div class="title-block">
-          <span class="thepent">
-          <span class="logo-moontime" style="color: #ff5ebc;">The</span>
-          <span class="logo-moontime" style="color: #1976d2; margin-left: 2px;">Pent</span>
-        </span>
-        </div>  
-      </div>
-    </span>
-</a>
-</footer>
 </html>
