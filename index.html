@@ -31,14 +31,17 @@
     left: 0;
   }
   .menu-scroll {
-  display: flex;
-  overflow-x: auto;
-  gap: 1rem;
-  padding: 1rem 0;
-  background: #fff;
-  border-bottom: 2px solid #eee;
-  margin-bottom: 1.5rem;
-}
+    display: flex;
+    overflow-x: visible;
+    gap: 1rem;
+    padding: 1rem 0;
+    background: #fff;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
 .menu-scroll button {
   background: #1976d2;
   color: #fff;
@@ -53,6 +56,24 @@
 .menu-scroll button:hover {
   background: #1565c0;
 }
+
+@media (max-width: 600px) {
+  .menu-scroll {
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .menu-scroll button {
+    flex: 0 0 auto;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    scroll-snap-align: start;
+  }
+}
+
 </style>
 <!DOCTYPE html>
 <html lang="es">
@@ -68,11 +89,12 @@
   <img src="banner.png" alt="Banner" style="width:100%;display:block;margin-bottom:1rem;">
 
   <div class="menu-scroll">
-  <button onclick="scrollToSection('noticias')">Noticias</button>
-  <button onclick="scrollToSection('radio')">Radio</button>
-  <button onclick="scrollToSection('streaming')">Streaming</button>
-  <button onclick="scrollToSection('earthcam')">EarthCam</button>
-</div>
+    <button onclick="scrollToSection('noticias')">Noticias</button>
+    <button onclick="scrollToSection('radio')">Radio</button>
+    <button onclick="scrollToSection('streaming')">Streaming</button>
+    <button onclick="scrollToSection('focus')">Focus</button>
+    <button onclick="scrollToSection('earthcam')">EarthCam</button>
+  </div>
 
   <h1 id="noticias">Canales de Noticias en Vivo</h1>
   <div class="grid">
@@ -123,6 +145,17 @@
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
           <iframe 
             src="https://www.youtube.com/embed/live_stream?channel=UCvsU0EGXN7Su7MfNqcTGNHg&autoplay=1&mute=1&enablejsapi=1"       
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+          </iframe>
+        </div>
+      </div>      
+      <div class="canal">
+        <h2>Quiero Musica TV</h2>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+          <iframe 
+            src="https://www.youtube.com/embed/8Mw0YdKN2XY?autoplay=1&mute=1&enablejsapi=1"       
             allow="autoplay; encrypted-media"
             allowfullscreen
             style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
@@ -240,10 +273,23 @@
         </iframe>
       </div>
     </div>
+
+    <!-- Agrega Radio Mega en la sección de Radio -->
+    <div class="canal">
+      <h2>Radio Mega</h2>
+      <div id="player-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/1aXIxjGqs6Y?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
   </div>
 
-    <h1 id="streaming">Canales de Streaming en Vivo</h1>
-    <div class="grid">
+  <h1 id="streaming">Canales de Streaming en Vivo</h1>
+  <div class="grid">
     <div class="canal">
       <h2>Gelatina</h2>
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
@@ -255,7 +301,6 @@
         </iframe>
       </div>
     </div>
-
     <div class="canal">
       <h2>Neura</h2>
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
@@ -267,7 +312,6 @@
         </iframe>
       </div>
     </div>
-
     <div class="canal">
       <h2>LuzuTV</h2>
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
@@ -279,7 +323,6 @@
         </iframe>
       </div>
     </div>
-
     <div class="canal">
       <h2>Olga</h2>
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
@@ -291,7 +334,6 @@
         </iframe>
       </div>
     </div>
-
     <div class="canal">
       <h2>Carajo</h2>
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
@@ -303,7 +345,6 @@
         </iframe>
       </div>
     </div>
-
     <div class="canal">
       <h2>Blender</h2>
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
@@ -315,7 +356,6 @@
         </iframe>
       </div>
     </div>
-
     <div class="canal">
       <h2>Solos La Casa</h2>
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
@@ -327,7 +367,6 @@
         </iframe>
       </div>
     </div>
-
     <div class="canal">
       <h2>Border</h2>
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
@@ -341,13 +380,13 @@
     </div>
   </div>
 
-  <h1 id="earthcam" style="margin-top:2.5rem;">Canales de EarthCam Live</h1>
+  <h1 id="focus" style="margin-top:2.5rem;">Canales Focus</h1>
   <div class="grid">
     <div class="canal">
-      <h2>Times Square, USA</h2>
+      <h2>Bossa Nova</h2>
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/rnXIjl_Rzy4?autoplay=1&mute=1&enablejsapi=1"
+        <iframe
+          src="https://www.youtube.com/embed/UVOcgw1ai_Y?autoplay=1&mute=1&enablejsapi=1"
           allow="autoplay; encrypted-media"
           allowfullscreen
           style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
@@ -355,10 +394,10 @@
       </div>
     </div>
     <div class="canal">
-      <h2>Abbey Road Crossing, London</h2>
+      <h2>Lofi Room</h2>
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/57w2gYXjRic?autoplay=1&mute=1&enablejsapi=1"
+        <iframe
+          src="https://www.youtube.com/embed/UVOcgw1ai_Y?autoplay=1&mute=1&enablejsapi=1"
           allow="autoplay; encrypted-media"
           allowfullscreen
           style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
@@ -366,65 +405,10 @@
       </div>
     </div>
     <div class="canal">
-      <h2>Cayman Islands, UK</h2>
+      <h2>Jazz</h2>
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/NQ3Ot_3907g?autoplay=1&mute=1&enablejsapi=1"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-    <div class="canal">
-      <h2>World Trade Center, USA</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/8VewLhfTdYo?autoplay=1&mute=1&enablejsapi=1"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-    <div class="canal">
-      <h2>Rio de Janeiro, Brazil</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/6QoLEltTzIM?autoplay=1&mute=1&enablejsapi=1"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-    <div class="canal">
-      <h2>Buenos Aires, Argentina</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/rqBfiegG5qU?autoplay=1&mute=1&enablejsapi=1"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-    <div class="canal">
-      <h2>Dublin, Ireland</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/u4UZ4UvZXrg?autoplay=1&mute=1&enablejsapi=1"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-        </iframe>
-      </div>
-    </div>
-    <div class="canal">
-      <h2>New Orleans, USA</h2>
-      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-        <iframe 
-          src="https://www.youtube.com/embed/qHW8srS0ylo?autoplay=1&mute=1&enablejsapi=1"
+        <iframe
+          src="https://www.youtube.com/embed/UVOcgw1ai_Y?autoplay=1&mute=1&enablejsapi=1"
           allow="autoplay; encrypted-media"
           allowfullscreen
           style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
@@ -432,24 +416,117 @@
       </div>
     </div>
   </div>
+    
+  <h1 id="earthcam" style="margin-top:2.5rem;">Canales de EarthCam Live</h1>
+  <div class="grid">
+    <div class="canal">
+      <h2>Times Square, USA</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+        src="https://www.youtube.com/embed/rnXIjl_Rzy4?autoplay=1&mute=1&enablejsapi=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+      </iframe>
+      </div>
+    </div>
+    <div class="canal">
+      <h2>Abbey Road Crossing, London</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+        src="https://www.youtube.com/embed/57w2gYXjRic?autoplay=1&mute=1&enablejsapi=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+      </iframe>
+      </div>
+    </div>
+    <div class="canal">
+      <h2>Cayman Islands, UK</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+        src="https://www.youtube.com/embed/NQ3Ot_3907g?autoplay=1&mute=1&enablejsapi=1"
+        allow="autoplay; encrypted-media"
+            allowfullscreen
+            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+          </iframe>
+      </div>
+    </div>
+    <div class="canal">
+      <h2>World Trade Center, USA</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+        src="https://www.youtube.com/embed/8VewLhfTdYo?autoplay=1&mute=1&enablejsapi=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+      </iframe>
+      </div>
+    </div>
+    <div class="canal">
+      <h2>Rio de Janeiro, Brazil</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+        src="https://www.youtube.com/embed/6QoLEltTzIM?autoplay=1&mute=1&enablejsapi=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+      </iframe>
+      </div>
+    </div>
+    <div class="canal">
+      <h2>Buenos Aires, Argentina</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+        src="https://www.youtube.com/embed/rqBfiegG5qU?autoplay=1&mute=1&enablejsapi=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+              style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+            </iframe>
+      </div>
+    </div>
+    <div class="canal">
+      <h2>Dublin, Ireland</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+        src="https://www.youtube.com/embed/u4UZ4UvZXrg?autoplay=1&mute=1&enablejsapi=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+      </iframe>
+      </div>
+    </div>
+    <div class="canal">
+      <h2>New Orleans, USA</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+        src="https://www.youtube.com/embed/qHW8srS0ylo?autoplay=1&mute=1&enablejsapi=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+      </iframe>
+      </div>
+    </div>
+  </div>
 </body>
 
 <footer style="background:#f1f1f1;color:#333;text-align:center;padding:1rem 0 1.2rem 0;font-size:1rem;">
-<a href="https://thepent.com.ar" target="_blank" rel="noopener">
-    <span class="thq-body-small">Powered by:</span>  
-    <span style="display: inline-block; margin-left: 12px;">
-      <!-- Encabezado MenuLab -->
-      <div class="header-container">
-        <div class="title-block">
-          <span class="thepent">
-          <span class="logo-moontime" style="color: #ff5ebc;">The</span>
-          <span class="logo-moontime" style="color: #1976d2; margin-left: 2px;">Pent</span>
-        </span>
-        </div>  
-      </div>
-    </span>
-</a>
+  <a href="https://thepent.com.ar" target="_blank" rel="noopener">
+      <span class="thq-body-small">Powered by:</span>  
+      <span style="display: inline-block; margin-left: 12px;">
+        <!-- Encabezado MenuLab -->
+        <div class="header-container">
+          <div class="title-block">
+            <span class="thepent">
+            <span class="logo-moontime" style="color: #ff5ebc;">The</span>
+            <span class="logo-moontime" style="color: #1976d2; margin-left: 2px;">Pent</span>
+          </span>
+          </div>  
+        </div>
+      </span>
+  </a>
 </footer>
+
 </html>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
@@ -461,7 +538,7 @@
 
     fetch(url)
       .then(res => res.json())
-      .then(data => {
+      .then ( data => {
         if (data.items && data.items.length > 0) {
           const videoId = data.items[0].id.videoId;
           const iframeId = `player-${channelId}`;
@@ -559,9 +636,9 @@
   }, 1000); // Cada 1 segundo
 
   function scrollToSection(sectionId) {
-  const el = document.getElementById(sectionId);
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
-}
 </script>
