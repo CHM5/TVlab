@@ -2,6 +2,57 @@
   .canal.activo {
     background: #bbbbbb;
   }
+  .canal.sin-video {
+    opacity: 0.5;
+    filter: grayscale(1);
+    min-height: 80px;
+    max-height: 80px;
+    overflow: hidden;
+    position: relative;
+  }
+  .canal.sin-video .embedContainer,
+  .canal.sin-video iframe {
+    display: none !important;
+  }
+  .canal .mensaje-sin-video {
+    display: none;
+  }
+  .canal.sin-video .mensaje-sin-video {
+    display: block;
+    color: #b00;
+    background: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  .menu-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  background: #fff;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 1.5rem;
+}
+.menu-scroll button {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.menu-scroll button:hover {
+  background: #1565c0;
+}
 </style>
 <!DOCTYPE html>
 <html lang="es">
@@ -16,7 +67,14 @@
 <body>
   <img src="banner.png" alt="Banner" style="width:100%;display:block;margin-bottom:1rem;">
 
-  <h1>Canales de Noticias en Vivo</h1>
+  <div class="menu-scroll">
+  <button onclick="scrollToSection('noticias')">Noticias</button>
+  <button onclick="scrollToSection('radio')">Radio</button>
+  <button onclick="scrollToSection('streaming')">Streaming</button>
+  <button onclick="scrollToSection('earthcam')">EarthCam</button>
+</div>
+
+  <h1 id="noticias">Canales de Noticias en Vivo</h1>
   <div class="grid">
 
       <div class="canal" data-channel-id="UCba3hpU7EFBSk817y9qZkiA">
@@ -73,7 +131,7 @@
       </div>
     </div>
 
-  <h1>Canales de Radio en Vivo</h1>
+  <h1 id="radio">Canales de Radio en Vivo</h1>
   <div class="grid">
     <div class="canal">
       <h2>Radio 10</h2>
@@ -184,7 +242,7 @@
     </div>
   </div>
 
-    <h1>Canales de Streaming en Vivo</h1>
+    <h1 id="streaming">Canales de Streaming en Vivo</h1>
     <div class="grid">
     <div class="canal">
       <h2>Gelatina</h2>
@@ -281,8 +339,98 @@
         </iframe>
       </div>
     </div>
+  </div>
 
-
+  <h1 id="earthcam" style="margin-top:2.5rem;">Canales de EarthCam Live</h1>
+  <div class="grid">
+    <div class="canal">
+      <h2>Times Square, USA</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          src="https://www.youtube.com/embed/rnXIjl_Rzy4?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+    <div class="canal">
+      <h2>Abbey Road Crossing, London</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          src="https://www.youtube.com/embed/57w2gYXjRic?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+    <div class="canal">
+      <h2>Cayman Islands, UK</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          src="https://www.youtube.com/embed/NQ3Ot_3907g?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+    <div class="canal">
+      <h2>World Trade Center, USA</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          src="https://www.youtube.com/embed/8VewLhfTdYo?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+    <div class="canal">
+      <h2>Rio de Janeiro, Brazil</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          src="https://www.youtube.com/embed/6QoLEltTzIM?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+    <div class="canal">
+      <h2>Buenos Aires, Argentina</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          src="https://www.youtube.com/embed/rqBfiegG5qU?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+    <div class="canal">
+      <h2>Dublin, Ireland</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          src="https://www.youtube.com/embed/u4UZ4UvZXrg?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+    <div class="canal">
+      <h2>New Orleans, USA</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          src="https://www.youtube.com/embed/qHW8srS0ylo?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
   </div>
 </body>
 
@@ -326,6 +474,7 @@
               frameborder="0"
               style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
             </iframe>`;
+          canalDiv.classList.remove('sin-video');
 
           // Iniciar el reproductor una vez que el iframe está en el DOM
           setTimeout(() => {
@@ -339,14 +488,19 @@
                     if (!event.target.isMuted()) {
                       players.forEach(({ canalDiv }) => canalDiv.classList.remove('activo'));
                       canalDiv.classList.add('activo');
+                    } else {
+                      canalDiv.classList.remove('activo');
                     }
+                  } else {
+                    canalDiv.classList.remove('activo');
                   }
                 }
               }
             });
           }, 300);
         } else {
-          container.innerHTML = "<p style='color:red;'>No hay transmisión en vivo.</p>";
+          container.innerHTML = `<div class="mensaje-sin-video">No hay transmisión en vivo</div>`;
+          canalDiv.classList.add('sin-video');
         }
       })
       .catch(err => {
@@ -381,7 +535,11 @@
               if (!event.target.isMuted()) {
                 players.forEach(({ canalDiv }) => canalDiv.classList.remove('activo'));
                 canalDiv.classList.add('activo');
+              } else {
+                canalDiv.classList.remove('activo');
               }
+            } else {
+              canalDiv.classList.remove('activo');
             }
           }
         }
@@ -400,4 +558,10 @@
     });
   }, 1000); // Cada 1 segundo
 
+  function scrollToSection(sectionId) {
+  const el = document.getElementById(sectionId);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
 </script>
