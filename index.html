@@ -57,6 +57,22 @@
   background: #1565c0;
 }
 
+.yt-fallback {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #ff0000;
+  color: #fff;
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  z-index: 20;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.yt-fallback small { opacity: 0.9; display:block; font-weight:400; font-size:0.72rem; }
+
 @media (max-width: 600px) {
   .menu-scroll {
     overflow-x: auto;
@@ -114,7 +130,7 @@
           </iframe>
         </div>
       </div>
-
+      
       <div class="canal">
         <h2>TN</h2>
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
@@ -162,6 +178,55 @@
           </iframe>
         </div>
       </div>
+      
+      <div class="canal">
+        <h2>NHK JAPAN News</h2>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+            <iframe
+              src="https://www.youtube.com/embed/f0lYkdA-Gtw?autoplay=1&mute=1&enablejsapi=1"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+              style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+            </iframe>
+        </div>
+      </div>
+
+      <div class="canal">
+        <h2>Al Jazeera</h2>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+          <iframe
+            src="https://www.youtube.com/embed/gCNeDWCI0vo?autoplay=1&mute=1&enablejsapi=1"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="canal">
+        <h2>Telefe</h2>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+          <iframe
+            src="https://www.youtube.com/embed/XhAYcYpPzTc?autoplay=1&mute=1&enablejsapi=1"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="canal">
+        <h2>India Today (LIVE)</h2>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+          <iframe
+            src="https://www.youtube.com/embed/maIgIqfWWIM?autoplay=1&mute=1&enablejsapi=1"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+          </iframe>
+        </div>
+      </div>
+
     </div>
 
   <h1 id="radio">Canales de Radio en Vivo</h1>
@@ -434,7 +499,7 @@
       <h2>Rio de Janeiro, Brazil</h2>
       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
         <iframe 
-        src="https://www.youtube.com/embed/6QoLEltTzIM?autoplay=1&mute=1&enablejsapi=1"
+        src="https://www.youtube.com/embed/vRQUO4Wn5EU?autoplay=1&mute=1&enablejsapi=1"
         allow="autoplay; encrypted-media"
         allowfullscreen
         style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
@@ -475,28 +540,26 @@
       </div>
     </div>
   </div>
-</body>
 
-<footer style="background:#f1f1f1;color:#333;text-align:center;padding:1rem 0 1.2rem 0;font-size:1rem;">
-  <a href="https://thepent.com.ar" target="_blank" rel="noopener">
-      <span class="thq-body-small">Powered by:</span>  
-      <span style="display: inline-block; margin-left: 12px;">
-        <!-- Encabezado MenuLab -->
-        <div class="header-container">
-          <div class="title-block">
-            <span class="thepent">
-            <span class="logo-moontime" style="color: #ff5ebc;">The</span>
-            <span class="logo-moontime" style="color: #1976d2; margin-left: 2px;">Pent</span>
-          </span>
-          </div>  
-        </div>
-      </span>
-  </a>
-</footer>
+  <footer style="background:#f1f1f1;color:#333;text-align:center;padding:1rem 0 1.2rem 0;font-size:1rem;">
+    <a href="https://thepent.com.ar" target="_blank" rel="noopener">
+        <span class="thq-body-small">Powered by:</span>  
+        <span style="display: inline-block; margin-left: 12px;">
+          <!-- Encabezado MenuLab -->
+          <div class="header-container">
+            <div class="title-block">
+              <span class="thepent">
+              <span class="logo-moontime" style="color: #ff5ebc;">The</span>
+              <span class="logo-moontime" style="color: #1976d2; margin-left: 2px;">Pent</span>
+            </span>
+            </div>  
+          </div>
+        </span>
+    </a>
+  </footer>
 
-</html>
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
   const apiKey = "AIzaSyAvN2FwyEaL_xAhiB1Y6RYdKk8It7Te89E";
   const players = [];
 
@@ -609,3 +672,6 @@
     }
   }
 </script>
+
+</body>
+</html>
