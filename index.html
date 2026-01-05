@@ -105,129 +105,275 @@
   <img src="banner.png" alt="Banner" style="width:100%;display:block;margin-bottom:1rem;">
 
   <div class="menu-scroll">
-    <button onclick="scrollToSection('noticias')">Noticias</button>
-    <button onclick="scrollToSection('radio')">Radio</button>
-    <button onclick="scrollToSection('streaming')">Streaming</button>
-    <button onclick="scrollToSection('earthcam')">EarthCam</button>
+    <label style="display:flex;align-items:center;gap:.4rem;">
+      <input type="checkbox" data-section="noticias"> Noticias
+    </label>
+    <label style="display:flex;align-items:center;gap:.4rem;">
+      <input type="checkbox" data-section="internacionales"> Internacionales
+    </label>
+    <label style="display:flex;align-items:center;gap:.4rem;">
+      <input type="checkbox" data-section="radio"> Radio
+    </label>
+    <label style="display:flex;align-items:center;gap:.4rem;">
+      <input type="checkbox" data-section="streaming"> Streaming
+    </label>
+    <label style="display:flex;align-items:center;gap:.4rem;">
+      <input type="checkbox" data-section="earthcam"> EarthCam
+    </label>
   </div>
 
   <h1 id="noticias">Canales de Noticias en Vivo</h1>
   <div class="grid">
-
-      <div class="canal" data-channel-id="UCba3hpU7EFBSk817y9qZkiA">
-        <h2>La Nación+</h2>
-        <div class="embedContainer" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;"></div>
-      </div>
-
-      <div class="canal">
-        <h2>C5N</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe 
-            src="https://www.youtube.com/embed/live_stream?channel=UCFgk2Q2mVO1BklRQhSv6p0w&autoplay=1&mute=1&enablejsapi=1"       
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-          </iframe>
-        </div>
-      </div>
-      
-      <div class="canal">
-        <h2>TN</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe 
-            src="https://www.youtube.com/embed/live_stream?channel=UCj6PcyLvpnIRT_2W_mwa9Aw&autoplay=1&mute=1&enablejsapi=1"       
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-          </iframe>
-        </div>
-      </div>
-
-      <div class="canal">
-        <h2>Crónica</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe 
-            src="https://www.youtube.com/embed/live_stream?channel=UCT7KFGv6s2a-rh2Jq8ZdM1g&autoplay=1&mute=1&enablejsapi=1"       
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-          </iframe>
-        </div>
-      </div>
-      
-      <div class="canal">
-        <h2>Infobae</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe 
-            src="https://www.youtube.com/embed/live_stream?channel=UCvsU0EGXN7Su7MfNqcTGNHg&autoplay=1&mute=1&enablejsapi=1"       
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-          </iframe>
-        </div>
-      </div>            
-
-      <div class="canal">
-        <h2>Quiero Musica TV</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe 
-            src="https://www.youtube.com/embed/8Mw0YdKN2XY?autoplay=1&mute=1&enablejsapi=1"       
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-          </iframe>
-        </div>
-      </div>
-      
-      <div class="canal">
-        <h2>NHK JAPAN News</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-            <iframe
-              src="https://www.youtube.com/embed/f0lYkdA-Gtw?autoplay=1&mute=1&enablejsapi=1"
-              allow="autoplay; encrypted-media"
-              allowfullscreen
-              style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-            </iframe>
-        </div>
-      </div>
-
-      <div class="canal">
-        <h2>Al Jazeera</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe
-            src="https://www.youtube.com/embed/gCNeDWCI0vo?autoplay=1&mute=1&enablejsapi=1"
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-          </iframe>
-        </div>
-      </div>
-
-      <div class="canal">
-        <h2>Telefe</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe
-            src="https://www.youtube.com/embed/XhAYcYpPzTc?autoplay=1&mute=1&enablejsapi=1"
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-          </iframe>
-        </div>
-      </div>
-
-      <div class="canal">
-        <h2>India Today (LIVE)</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-          <iframe
-            src="https://www.youtube.com/embed/maIgIqfWWIM?autoplay=1&mute=1&enablejsapi=1"
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-          </iframe>
-        </div>
-      </div>
-
+    <div class="canal" data-channel-id="UCba3hpU7EFBSk817y9qZkiA">
+      <h2>La Nación+</h2>
+      <div class="embedContainer" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;"></div>
     </div>
+      
+    <div class="canal">
+      <h2>C5N</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          src="https://www.youtube.com/embed/SF06Qy1Ct6Y?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="canal">
+      <h2>TN</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          src="https://www.youtube.com/embed/live_stream?channel=UCj6PcyLvpnIRT_2W_mwa9Aw&autoplay=1&mute=1&enablejsapi=1"       
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="canal">
+      <h2>Crónica</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          src="https://www.youtube.com/embed/live_stream?channel=UCT7KFGv6s2a-rh2Jq8ZdM1g&autoplay=1&mute=1&enablejsapi=1"       
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+      
+    <div class="canal">
+      <h2>Infobae</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          src="https://www.youtube.com/embed/live_stream?channel=UCvsU0EGXN7Su7MfNqcTGNHg&autoplay=1&mute=1&enablejsapi=1"       
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>            
+
+    <div class="canal">
+      <h2>Quiero Musica TV</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe 
+          src="https://www.youtube.com/embed/8Mw0YdKN2XY?autoplay=1&mute=1&enablejsapi=1"       
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+    
+    <div class="canal">
+      <h2>Telefe</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/XhAYcYpPzTc?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <h1 id="internacionales">Canales Internacionales en Vivo</h1>
+  <div class="grid">
+    <div class="canal">
+      <h2>Bloomberg</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/iEpJwprxDdk?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="canal">
+      <h2>ABC News US</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/iipR5yUp36o?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="canal">
+      <h2>Fox NY</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/ADXWeM9wsDw?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="canal">
+      <h2>News 12</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/JEtvLd4B-AY?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="canal">
+      <h2>GB News</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/QliL4CGc7iY?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="canal">
+      <h2>Euronews</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/pykpO5kQJ98?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="canal">
+      <h2>CNA Asia</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/XWq5kBlakcQ?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="canal">
+      <h2>DW</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+          <iframe
+            src="https://www.youtube.com/embed/LuKwFajn37U?autoplay=1&mute=1&enablejsapi=1"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+          </iframe>
+      </div>
+    </div>
+
+    <div class="canal">
+      <h2>France 24</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/Ap-UM1O9RBU?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+    
+    <div class="canal">
+      <h2>Al Jazeera</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/gCNeDWCI0vo?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+    
+    <!-- Nuevos canales solicitados -->
+    <div class="canal">
+      <h2>The Enforcer</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/CcYKPUVD-R0?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="canal">
+      <h2>NBC News</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/R5gotyO95Ik?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="canal">
+      <h2>Sky News</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/YDvsBbKfLPA?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="canal">
+      <h2>Agenda Free TV</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <iframe
+          src="https://www.youtube.com/embed/ZNdKy4q2Jr4?autoplay=1&mute=1&enablejsapi=1"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
+        </iframe>
+      </div>
+    </div>
+  </div>
 
   <h1 id="radio">Canales de Radio en Vivo</h1>
   <div class="grid">
@@ -374,12 +520,12 @@
         allow="autoplay; encrypted-media"
         allowfullscreen
         style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;">
-      </iframe>
+        </iframe>
+      </div>
     </div>
   </div>
-</div>
 
-<h1 id="streaming">Canales de Streaming en Vivo</h1>
+  <h1 id="streaming">Canales de Streaming en Vivo</h1>
   <div class="grid">
     <div class="canal">
       <h2>Gelatina</h2>
@@ -585,10 +731,104 @@
 
           // Iniciar el reproductor una vez que el iframe está en el DOM
           setTimeout(() => {
-            const player = new YT.Player(iframeId, {
+            // Sólo crear el Player si la API de YouTube ya está lista
+            if (window.YT && YT.Player) {
+              try {
+                const player = new YT.Player(iframeId, {
+                  events: {
+                    'onReady': function (event) {
+                      players.push({ player: event.target, canalDiv });
+                    },
+                    'onStateChange': function (event) {
+                      if (event.data === YT.PlayerState.PLAYING) {
+                        if (!event.target.isMuted()) {
+                          players.forEach(({ canalDiv }) => canalDiv.classList.remove('activo'));
+                          canalDiv.classList.add('activo');
+                        } else {
+                          canalDiv.classList.remove('activo');
+                        }
+                      } else {
+                        canalDiv.classList.remove('activo');
+                      }
+                    }
+                  }
+                });
+              } catch (e) {
+                // si falla, dejar que onYouTubeIframeAPIReady lo inicialice más tarde
+              }
+            }
+          }, 300);
+        } else {
+          container.innerHTML = `<div class="mensaje-sin-video">No hay transmisión en vivo</div>`;
+          canalDiv.classList.add('sin-video');
+        }
+      })
+      .catch(err => {
+        console.error("Error al consultar canal", channelId, err);
+        container.innerHTML = "<p style='color:red;'>Error al cargar el video.</p>";
+      });
+  }
+
+  // No cargar iframes automáticamente: mover src -> data-src y quitar src
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('iframe').forEach((iframe) => {
+      const src = iframe.getAttribute('src');
+      if (src) {
+        iframe.setAttribute('data-src', src);
+        iframe.removeAttribute('src');
+      }
+    });
+
+    // Conectar los checkboxes dentro de .menu-scroll a enable/disable
+    document.querySelectorAll('.menu-scroll input[type="checkbox"]').forEach((cb) => {
+      cb.addEventListener('change', (e) => {
+        const sec = e.target.dataset.section;
+        if (!sec) return;
+        if (e.target.checked) enableSection(sec);
+        else disableSection(sec);
+      });
+    });
+
+    // Hacer click en el texto del label también haga scroll a la sección
+    document.querySelectorAll('.menu-scroll label').forEach((label) => {
+      label.addEventListener('click', (e) => {
+        // si el clic fue sobre el input, dejar que el cambio del checkbox se maneje
+        if (e.target && e.target.tagName && e.target.tagName.toLowerCase() === 'input') return;
+        const cb = label.querySelector('input[type="checkbox"]');
+        if (cb && cb.dataset && cb.dataset.section) scrollToSection(cb.dataset.section);
+      });
+    });
+  });
+
+  // Helper to find grid for a section id
+  function getGridForSection(sectionId) {
+    const h = document.getElementById(sectionId);
+    if (!h) return null;
+    let el = h.nextElementSibling;
+    while (el && !el.classList.contains('grid')) el = el.nextElementSibling;
+    return el;
+  }
+
+  function enableSection(sectionId) {
+    const grid = getGridForSection(sectionId);
+    if (!grid) return;
+
+    // Restore iframe src from data-src
+    grid.querySelectorAll('iframe[data-src]').forEach((iframe) => {
+      if (!iframe.getAttribute('src')) iframe.setAttribute('src', iframe.getAttribute('data-src'));
+    });
+
+    // Initialize players for newly added iframes, only if API ready
+    if (window.YT && YT.Player) {
+      setTimeout(() => {
+        grid.querySelectorAll("iframe[src*='youtube.com']:not([data-player])").forEach((iframe) => {
+          iframe.setAttribute('data-player','1');
+          try {
+            const canalDiv = iframe.closest('.canal');
+            const player = new YT.Player(iframe, {
               events: {
                 'onReady': function (event) {
-                  players.push({ player, canalDiv });
+                  players.push({ player: event.target, canalDiv });
                 },
                 'onStateChange': function (event) {
                   if (event.data === YT.PlayerState.PLAYING) {
@@ -604,29 +844,54 @@
                 }
               }
             });
-          }, 300);
-        } else {
-          container.innerHTML = `<div class="mensaje-sin-video">No hay transmisión en vivo</div>`;
-          canalDiv.classList.add('sin-video');
-        }
-      })
-      .catch(err => {
-        console.error("Error al consultar canal", channelId, err);
-        container.innerHTML = "<p style='color:red;'>Error al cargar el video.</p>";
-      });
+          } catch (err) {
+            // ignore
+          }
+        });
+      }, 600);
+    }
+
+    // Load dynamic channels (data-channel-id)
+    grid.querySelectorAll('.canal[data-channel-id]').forEach((canal, index) => {
+      const channelId = canal.getAttribute('data-channel-id');
+      const container = canal.querySelector('.embedContainer');
+      if (channelId && container && canal.getAttribute('data-loaded') !== '1') {
+        setTimeout(() => {
+          cargarLiveDesdeChannel(channelId, container, canal);
+          canal.setAttribute('data-loaded', '1');
+        }, index * 800);
+      }
+    });
   }
 
-  // Al cargar el DOM, iterar sobre los canales con data-channel-id
-  const canales = document.querySelectorAll(".canal");
-  canales.forEach((canal, index) => {
-    const channelId = canal.getAttribute("data-channel-id");
-    const container = canal.querySelector(".embedContainer");
-    if (channelId && container) {
-      setTimeout(() => {
-        cargarLiveDesdeChannel(channelId, container, canal);
-      }, index * 1000);
-    }
-  });
+  function disableSection(sectionId) {
+    const grid = getGridForSection(sectionId);
+    if (!grid) return;
+
+    // Destroy players within this grid
+    const toRemove = [];
+    players.forEach(({ player, canalDiv }, idx) => {
+      if (grid.contains(canalDiv)) {
+        try { player.destroy(); } catch(e){}
+        toRemove.push(idx);
+      }
+    });
+    // remove from players array in reverse
+    toRemove.reverse().forEach(i => players.splice(i,1));
+
+    // Remove iframe src to stop loading
+    grid.querySelectorAll('iframe[data-src]').forEach((iframe) => {
+      if (iframe.getAttribute('src')) iframe.removeAttribute('src');
+    });
+
+    // Clear dynamic embedContainers
+    grid.querySelectorAll('.canal[data-channel-id]').forEach((canal) => {
+      const container = canal.querySelector('.embedContainer');
+      if (container) container.innerHTML = '';
+      canal.removeAttribute('data-loaded');
+      canal.classList.remove('activo');
+    });
+  }
 
   // Inicializar los iframes que ya están en el DOM (estáticos)
   function onYouTubeIframeAPIReady() {
